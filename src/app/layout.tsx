@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
-
+import Navbar from "@/components/Navbar";
 import ThemeController from "@/components/ThemeController";
 
 const geistSans = Geist({
@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <ReactQueryProvider>
           <ThemeController />
-
+          <Navbar />
           <main >{children}</main>
         </ReactQueryProvider>
       </body>
