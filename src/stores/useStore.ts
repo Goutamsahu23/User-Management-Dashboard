@@ -1,4 +1,3 @@
-// src/stores/useStore.ts
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -12,7 +11,7 @@ export type SimpleUser = {
 export type ActivityType = "add" | "edit" | "delete" | "login" | "other";
 
 export type Activity = {
-  id: string; // timestamp or uuid string
+  id: string; 
   type: ActivityType;
   message: string;
   timestamp: string; // ISO string
@@ -23,6 +22,7 @@ type Store = {
   loggedInUser: SimpleUser | null;
   darkMode: boolean;
   activityLog: Activity[];
+  showActivityLog: boolean; // NEW
 
   // actions
   setLoggedInUser: (user: SimpleUser | null) => void;
@@ -30,6 +30,10 @@ type Store = {
   setDarkMode: (val: boolean) => void;
   addActivity: (payload: { type: ActivityType; message: string }) => void;
   clearActivities: () => void;
+
+  // activity log visibility
+  setShowActivityLog: (val: boolean) => void;
+  toggleShowActivityLog: () => void;
 };
 
 /** ----- Default user (hardcoded) ----- **/
@@ -44,11 +48,12 @@ const DEFAULT_USER: SimpleUser = {
  */
 export const useStore = create<Store>()(
   persist<Store>(
-    (set, get) => ({
+    (set) => ({
       // initial state
       loggedInUser: DEFAULT_USER,
       darkMode: false,
       activityLog: [],
+      showActivityLog: true,
 
       // actions
       setLoggedInUser: (user: SimpleUser | null) => {
@@ -73,9 +78,18 @@ export const useStore = create<Store>()(
       clearActivities: () => {
         set({ activityLog: [] });
       },
+
+      // activity log visibility
+      setShowActivityLog: (val: boolean) => {
+        set({ showActivityLog: val });
+      },
+
+      toggleShowActivityLog: () => {
+        set((state) => ({ showActivityLog: !state.showActivityLog }));
+      },
     }),
     {
-      name: "um-dashboard-store", 
+      name: "um-dashboard-store", // key in localStorage
     }
   )
 );
