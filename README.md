@@ -9,7 +9,7 @@ To get started with this project locally, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository-url>
+   git clone [https://github.com/Goutamsahu23/User-Management-Dashboard.git](https://github.com/Goutamsahu23/User-Management-Dashboard.git)
    ```
 
 2. **Navigate to the project directory:**
@@ -26,8 +26,14 @@ To get started with this project locally, follow these steps:
    yarn install
    # or
    pnpm install
-   # or
-   bun install
+   ```
+
+4. **Add .env file:**
+
+Create a .env file in the root and add the api route :
+
+   ```bash
+   NEXT_PUBLIC_API_BASE_URL=https://jsonplaceholder.typicode.com
    ```
 
 ## Getting Started
