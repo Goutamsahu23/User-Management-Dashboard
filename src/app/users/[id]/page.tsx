@@ -43,7 +43,7 @@ export default function UserDetailClient() {
               <h2 className="text-2xl font-semibold" style={{ color: "var(--text)" }}>
                 {user.name}
               </h2>
-              <div className="mt-1 text-sm text-[var(--muted)]">{user.username ?? "member"}</div>
+              <div className="mt-1 text-sm text-(--muted)">{user.username ?? "member"}</div>
               <div className="mt-2 flex items-center gap-2">
                 <span
                   className="px-2 py-0.5 rounded-full text-xs font-medium"
@@ -117,7 +117,7 @@ export default function UserDetailClient() {
                     <Mail className="w-4 h-4" />
                   </span>
                   <div>
-                    <div className="text-sm text-[var(--muted)]">Email</div>
+                    <div className="text-sm text-(--muted)">Email</div>
                     <div className="text-sm" style={{ color: "var(--text)" }}>{user.email}</div>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export default function UserDetailClient() {
                     <Phone className="w-4 h-4" />
                   </span>
                   <div>
-                    <div className="text-sm text-[var(--muted)]">Phone</div>
+                    <div className="text-sm text-(--muted)">Phone</div>
                     <div className="text-sm" style={{ color: "var(--text)" }}>{user.phone ?? "-"}</div>
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export default function UserDetailClient() {
                     <Globe className="w-4 h-4" />
                   </span>
                   <div>
-                    <div className="text-sm text-[var(--muted)]">Website</div>
+                    <div className="text-sm text-(--muted)">Website</div>
                     <div className="text-sm" style={{ color: "var(--text)" }}>{user.website ?? "-"}</div>
                   </div>
                 </div>
@@ -148,14 +148,14 @@ export default function UserDetailClient() {
             <div className="hidden md:flex flex-col gap-2">
               <a
                 href={`mailto:${user.email}`}
-                className="px-3 py-2 rounded-lg text-sm text-[var(--text)] border"
+                className="px-3 py-2 rounded-lg text-sm text-(--muted) border"
                 style={{ borderColor: "rgba(0,0,0,0.06)" }}
               >
                 Email
               </a>
               <a
                 href={`tel:${user.phone}`}
-                className="px-3 py-2 rounded-lg text-sm text-[var(--text)] border"
+                className="px-3 py-2 rounded-lg text-sm text-(--muted) border"
                 style={{ borderColor: "rgba(0,0,0,0.06)" }}
               >
                 Call
@@ -175,10 +175,10 @@ export default function UserDetailClient() {
               </div>
 
               <div>
-                <div className="text-sm text-[var(--muted)]">Name</div>
+                <div className="text-sm text-(--muted)">Name</div>
                 <div className="text-sm mb-2" style={{ color: "var(--text)" }}>{user.company?.name ?? "-"}</div>
 
-                <div className="text-sm text-[var(--muted)]">Catchphrase</div>
+                <div className="text-sm text-(--muted)">Catchphrase</div>
                 <div className="text-sm" style={{ color: "var(--text)" }}>{user.company?.catchPhrase ?? "-"}</div>
               </div>
             </div>
@@ -197,12 +197,12 @@ export default function UserDetailClient() {
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-sm text-[var(--muted)]">Street</div>
+                <div className="text-sm text-(--muted)">Street</div>
                 <div className="text-sm" style={{ color: "var(--text)" }}>
                   {user.address?.street ?? "-"} {user.address?.suite ?? ""}
                 </div>
 
-                <div className="mt-2 text-sm text-[var(--muted)]">City / Zip</div>
+                <div className="mt-2 text-sm text-(--muted)">City / Zip</div>
                 <div className="text-sm" style={{ color: "var(--text)" }}>
                   {user.address?.city ?? "-"} • {user.address?.zipcode ?? "-"}
                 </div>

@@ -254,7 +254,7 @@ export default function DashboardPage() {
         <div className="flex items-center gap-3 flex-wrap">
           {/* search */}
           <div className="relative w-full md:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-(--muted)" />
             <input
               value={search}
               onChange={(e) => {
@@ -264,10 +264,10 @@ export default function DashboardPage() {
               placeholder="Search by name..."
               className="
                 w-full pl-10 pr-3 py-2.5 rounded-lg border
-                bg-white/70 dark:bg-[var(--surface)]
+                bg-white/70 dark:bg-(--surface)
                 border-black/10 dark:border-white/10
-                text-[var(--text)] text-sm
-                focus:ring-4 focus:ring-[var(--primary)]/20
+                text-(--text) text-sm
+                focus:ring-4 focus:ring-(--primary)/20
               "
             />
             {search && (
@@ -352,7 +352,7 @@ export default function DashboardPage() {
                 <Dialog.Root open={showActivityLog} onOpenChange={toggleShowActivityLog}>
                   <Dialog.Portal>
                     <Dialog.Overlay className="fixed inset-0 bg-black/40 z-40" />
-                    <Dialog.Content className="fixed left-4 right-4 bottom-6 z-50 bg-[var(--surface)] border border-[var(--border)] rounded-lg p-4 max-h-[80vh] overflow-auto">
+                    <Dialog.Content className="fixed left-4 right-4 bottom-6 z-50 bg-(--surface) border border-(--border) rounded-lg p-4 max-h-[80vh] overflow-auto">
 
                       <div className="space-y-2">
                         <ActivityLog />
