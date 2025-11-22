@@ -51,9 +51,9 @@ export const useStore = create<Store>()(
     (set) => ({
       // initial state
       loggedInUser: DEFAULT_USER,
-      darkMode: false,
+      darkMode: true,
       activityLog: [],
-      showActivityLog: true,
+      showActivityLog: false,
 
       // actions
       setLoggedInUser: (user: SimpleUser | null) => {
